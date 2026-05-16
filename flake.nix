@@ -13,14 +13,14 @@
       pkgs = import nixpkgs { inherit system overlays; inherit (haskell-nix) config; };
       utils = pkgs.haskell-nix-utils;
       project = utils.stackageProject' {
-        resolver = "lts-22.4";
+        resolver = "lts-23.28";
         name = "stylish-haskell";
         src = utils.cleanGitHaskellSource { name = "stylish-haskell-src"; src = self; };
         cabalFile = ./stylish-haskell.cabal;
         # fromHackage = utils.hackage-sets.hls_2_5_0_0;
         fromHackage = {
-          ghc-lib-parser = "9.8.1.20231009";
-          ghc-lib-parser-ex = "9.8.0.0";
+          ghc-lib-parser = "9.8.4.20241130";
+          ghc-lib-parser-ex = "9.8.0.2";
         };
         modules = [
           {
